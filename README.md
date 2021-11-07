@@ -5,13 +5,6 @@ AWS MediaLive 系列是AWS 广播级的媒体服务组件，可以在任意区�
 **Go [here](docs/FEATURES.md) 更多的MSAM 架构介绍.**
 
 # Solution Overview
-[//]: # (What does the solution do? What customer problem does it solve? Mention specific use cases)
-* AWS Media Services Application Mapper (MSAM) is a browser-based tool that allows operators to visualize the structure and logical connections among AWS Media Services and supporting services in the cloud.
-* MSAM can be used as a top-down resource monitoring tool when integrated with CloudWatch.
-* MSAM offers two different visualization options: Diagrams and Tiles. 
-* MSAM can be configured to automatically display AWS Media Services alerts from AWS Elemental MediaLive channels and multiplex and AWS Elemental MediaConnect.
-
-**Go [here](docs/FEATURES.md) for more information on MSAM's capabilities and features.**
 
 <a name="installation"></a>
 ## Installation Guide
@@ -23,8 +16,7 @@ Go [here](docs/INSTALL.md) 安装MSAM 到AWS account.
 <img width="1108" alt="预案" src="https://user-images.githubusercontent.com/37872657/140631605-10353ee6-77d3-48ee-a2cd-352c2f630103.png">
 
 架构参考：
-(https://github.com/hades1712/aws-media-services-application-mapper/blob/master/docs/images/custom-nodes.jpeg)
-
+![custom-nodes](https://user-images.githubusercontent.com/37872657/140631808-420aef82-7dce-4bcc-b984-ad9351648f8f.jpeg)
 
 
 # Customizing the Solution
