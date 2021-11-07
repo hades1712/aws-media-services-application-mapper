@@ -31,16 +31,7 @@ def lambda_handler(event, context):
             make_default_settings(settings_table)
     except ClientError as client_error:
         print("Exception: %s" % client_error)
-        result = {
-            'Status': 'FAILED',
-            "StackId": event["StackId"],
-            "RequestId": event["RequestId"],
-            "LogicalResourceId": event["LogicalResourceId"],
-            'Data': {
-                "Exception": str(client_error)
-            },
-            'ResourceId': None
-        }
+        str(client_error)
     resource_tools.send(event, context, result['Status'], result['Data'], result["PhysicalResourceId"])
 
 
