@@ -1,22 +1,9 @@
-**[🚀 Solution Landing Page](https://aws.amazon.com/solutions/implementations/media-services-application-mapper/)** | **[🚧 Feature request](https://github.com/awslabs/aws-media-services-application-mapper/issues/new?assignees=&labels=feature-request%2C+enhancement&template=feature_request.md&title=)** | **[🐛 Bug Report](https://github.com/awslabs/aws-media-services-application-mapper/issues/new?assignees=&labels=bug%2C+triage&template=bug_report.md&title=)**
+## 内容介绍
 
-Note: If you want to use the solution without building from source, navigate to Solution Landing Page
+AWS MediaLive 系列是AWS 广播级的媒体服务组件，可以在任意区域构建并在全球组成相应的媒体网络，目前挑战是当用户在组成直播网络后，每个MediaLive 系列的服务都是在其所在区域进行监控，这样就缺少全局的视角来监控全球范围的整体服务，对于全球的直播场景这个功能比较重要，本次采用了aws-media-servces-application-mapper的框架，实现对全球服务单一视图的可视化，并标记相应的媒体流向。
 
-## Table of contents
+**Go [here](docs/FEATURES.md) 更多的MSAM 架构介绍.**
 
-- [Solution Overview](#solution-overview)
-- [Installation Guide](#installation-guide)
-- [Architecture Diagram](#architecture-diagram)
-- [Customizing the Solution](#customizing-the-solution)
-  - [Prerequisites for Customization](#prerequisites-for-customization)
-  - [Build](#build)
-  - [Unit Test](#unit-test)
-  - [Deploy](#deploy)
-- [File structure](#file-structure)
-- [License](#license)
-  - [Navigate](#navigate)
-
-<a name="solution-overview"></a>
 # Solution Overview
 [//]: # (What does the solution do? What customer problem does it solve? Mention specific use cases)
 * AWS Media Services Application Mapper (MSAM) is a browser-based tool that allows operators to visualize the structure and logical connections among AWS Media Services and supporting services in the cloud.
@@ -27,18 +14,23 @@ Note: If you want to use the solution without building from source, navigate to 
 **Go [here](docs/FEATURES.md) for more information on MSAM's capabilities and features.**
 
 <a name="installation"></a>
-# Installation Guide
-Go [here](docs/INSTALL.md) for more information on installing MSAM into your AWS account.
+## Installation Guide
+Go [here](docs/INSTALL.md) 安装MSAM 到AWS account.
 
 <a name="architecture-diagram"></a>
-# Architecture Diagram
-[//]: # (Provide Architecture Diagram. Add few bullets to describe the architecture workflow)
-You'll find the various architectural views for MSAM [here](docs/ARCHITECTURE.md).
-<a name="aws-solutions-constructs"></a><a name="customizing-the-solution"></a>
+## Architecture Diagram
+全球网络媒体流程设计：通过该流程设计，更好的监控整个全球的媒体网络及了解相应的预案
+<img width="1108" alt="预案" src="https://user-images.githubusercontent.com/37872657/140631605-10353ee6-77d3-48ee-a2cd-352c2f630103.png">
+
+架构参考：
+(https://github.com/hades1712/aws-media-services-application-mapper/blob/master/docs/images/custom-nodes.jpeg)
+
+
+
 # Customizing the Solution
 
 <a name="prerequisites-for-customization"></a>
-## Prerequisites for Customization
+## 前期准备
 [//]: # (Add any prerequisites for customization steps. e.g. Prerequisite: Node.js>10)
 
 * Install/update to Python 3.x
@@ -52,28 +44,8 @@ export VERSION=my-version # version number for the customized code
 ```
 _Note:_ You would have to create an S3 bucket with the prefix '_my-bucket-name-<aws_region>_'.  aws_region is where you are testing the customized solution. Also, the assets in bucket should be publicly accessible.
 
-<a name="build"></a>
-## Build
-[//]: # (Add commands to build lambda binaries from root of the project)
-To build the distributable and prepare the CloudFormation templates:
-```
-chmod +x ./build-s3-dist.sh
-./build-s3-dist.sh $DIST_OUTPUT_BUCKET $SOLUTION_NAME $VERSION
-```
-
-CloudFormation templates will be written to deployment/global-s3-assets.
-
-Lambda binaries will be written to deployment/regional-s3-assets.
-
-
-<a name="unit-test"></a>
-## Unit Test
-[//]: # (Add commands to run unit tests from root of the project)
-
-TBD
-
 <a name="deploy"></a>
-## Deploy
+## 部署
 [//]: # (Add commands to deploy the solution's stacks from the root of the project)
 
 Deploy the distributable to an Amazon S3 bucket in your account. 
